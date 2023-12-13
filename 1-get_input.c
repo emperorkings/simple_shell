@@ -40,7 +40,7 @@ void get_input(int *loop, char *argv)
 	size_t read, count;
 	char *cmd = NULL;
 
-	read = getlin(&cmd, &count, stdin);
+	read = getline(&cmd, &count, stdin);
 	if (read == (size_t)-1 || read == 0)
 	{
 		free(cmd);
@@ -49,7 +49,7 @@ void get_input(int *loop, char *argv)
 
 	if (cmd[read - 1] == '\n')
 		cmd[read - 1] = '\0';
-	if (stlen(cmd) == 0)
+	if (strlen(cmd) == 0)
 	{
 		free(cmd);
 		return;

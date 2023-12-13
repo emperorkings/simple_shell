@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <unistd.h>
 
 /**
  * contd - check for more commands
@@ -59,7 +60,7 @@ int nonin_commands(char **arg, char *argv)
 	}
 	if (strcomp(arg[0], "cd") == 0)
 	{
-		_chdir(arg[1]);
+		chdir(arg[1]);
 		return (1);
 	}
 	if (strcomp(arg[0], "env") == 0)

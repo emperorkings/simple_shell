@@ -67,7 +67,7 @@ int commands(char **arg, char **args, char *cmd, int *loop, char *argv)
 	}
 	if (strcomp(arg[0], "cd") == 0)
 	{
-		_chdir(arg[1]);
+		chdir(arg[1]);
 		return (1);
 	}
 	if (strcomp(arg[0], "env") == 0)
